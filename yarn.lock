@@ -737,6 +737,14 @@ hexo-generator-index@^0.2.0:
     hexo-pagination "0.0.2"
     object-assign "^4.0.1"
 
+hexo-generator-json-content@^3.0.1:
+  version "3.0.1"
+  resolved "http://registry.npm.taobao.org/hexo-generator-json-content/download/hexo-generator-json-content-3.0.1.tgz#817cfcecbe9abd93041405f24060dbe93e984744"
+  dependencies:
+    hexo-util latest
+    keyword-extractor latest
+    moment latest
+
 hexo-generator-tag@^0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/hexo-generator-tag/download/hexo-generator-tag-0.2.0.tgz#c5715846bb41e57d9c20c1d66d7db21a1abf7a62"
@@ -800,7 +808,7 @@ hexo-server@^0.2.0:
     opn "^4.0.0"
     serve-static "^1.10.0"
 
-hexo-util@^0.6.0, hexo-util@^0.6.2, hexo-util@^0.6.3:
+hexo-util@^0.6.0, hexo-util@^0.6.2, hexo-util@^0.6.3, hexo-util@latest:
   version "0.6.3"
   resolved "http://registry.npm.taobao.org/hexo-util/download/hexo-util-0.6.3.tgz#16a2ade457bef955af0dfd22a3fe6f0a49a9137c"
   dependencies:
@@ -1005,6 +1013,13 @@ jsonparse@^1.2.0:
   version "1.3.1"
   resolved "http://registry.npm.taobao.org/jsonparse/download/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
 
+keyword-extractor@latest:
+  version "0.0.15"
+  resolved "http://registry.npm.taobao.org/keyword-extractor/download/keyword-extractor-0.0.15.tgz#193157dc6230f1be81f3147567ee8f16267d8e27"
+  dependencies:
+    underscore "1.7.0"
+    underscore.string "2.3.3"
+
 kind-of@^3.0.2:
   version "3.2.2"
   resolved "http://registry.npm.taobao.org/kind-of/download/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -1191,7 +1206,7 @@ moment-timezone@^0.5.14:
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.10.6, moment@^2.18.0, moment@^2.19.4:
+"moment@>= 2.9.0", moment@^2.10.6, moment@^2.18.0, moment@^2.19.4, moment@latest:
   version "2.22.1"
   resolved "http://registry.npm.taobao.org/moment/download/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
@@ -1774,6 +1789,14 @@ uglify-js@~2.4:
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/uglify-to-browserify/download/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
+
+underscore.string@2.3.3:
+  version "2.3.3"
+  resolved "http://registry.npm.taobao.org/underscore.string/download/underscore.string-2.3.3.tgz#71c08bf6b428b1133f37e78fa3a21c82f7329b0d"
+
+underscore@1.7.0:
+  version "1.7.0"
+  resolved "http://registry.npm.taobao.org/underscore/download/underscore-1.7.0.tgz#6bbaf0877500d36be34ecaa584e0db9fef035209"
 
 unpipe@~1.0.0:
   version "1.0.0"
