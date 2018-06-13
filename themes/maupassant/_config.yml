@@ -10,12 +10,13 @@ gitment:
   client_id: ## GitHub client ID, e.g. 75752dafe7907a897619
   client_secret: ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
 gitalk:
-  enable: false ## If you want to use Gitment comment system please set the value to true.
-  owner:  ## Your GitHub ID, e.g. username
-  repo:  ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
-  client_id:  ## GitHub client ID, e.g. 75752dafe7907a897619
-  client_secret:  ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
-  admin:  ## Github repo owner and collaborators, only these guys can initialize github issues.
+  enable: true ## If you want to use Gitment comment system please set the value to true.
+  owner: 662 ## Your GitHub ID, e.g. username
+  repo: 662.github.io ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
+  client_id: a9ea8ec21008341ab6f8 ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret: 6656888d4258b947370b8b27b7650baa4e97fca2 ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+  admin: 662 ## Github repo owner and collaborators, only these guys can initialize github issues.
+  createIssueManually: true
 valine: ## https://valine.js.org
   enable: false ## If you want to use Valine comment system, please set the value to true.
   appid: ## Your LeanCloud application App ID, e.g. pRBBL2JR4N7kLEGojrF0MsSs-gzGzoHsz
@@ -70,6 +71,9 @@ menu:
   - page: about
     directory: about/
     icon: fa-user
+  - page: guestbook
+    directory: guestbook/
+    icon: fa-comments
   - page: rss
     directory: atom.xml
     icon: fa-rss
@@ -83,22 +87,16 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - links
 
 links:
-  - title: site-name1
-    url: http://www.example1.com/
-  - title: site-name2
-    url: http://www.example2.com/
-  - title: site-name3
-    url: http://www.example3.com/
+  - title: '@662'
+    url: http://github.com/662
 
 timeline:
-  - num: 1
-    word: 2014/06/12-Start
-  - num: 2
-    word: 2014/11/29-XXX
   - num: 3
-    word: 2015/02/18-DDD
-  - num: 4
-    word: More
+    word: 2018/03/08-发布第一个Post
+  - num: 2
+    word: 2018/03/06-使用hexo构建Github pages
+  - num: 1
+    word: 2018/03/01-开始使用Github pages
 
 # Static files
 js: js

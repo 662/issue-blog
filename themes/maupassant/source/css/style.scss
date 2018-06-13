@@ -71,7 +71,9 @@ div {
             overflow: hidden;
         }
         #logo {
-            font: bold 38px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+            // font: bold 38px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+            font-size: 36px;
+            font-weight: bolder;
             color: #555;
             span, &:hover {
                 color: #777;

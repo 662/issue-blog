@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "start": "hexo server",
-    "build": "hexo g -d"
+    "build": "hexo clean&&hexo g -d"
   },
   "hexo": {
     "version": "3.7.1"
   },
   "dependencies": {
     "hexo": "^3.2.0",
+    "hexo-asset-image": "^0.0.3",
     "hexo-deployer-git": "^0.3.1",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",
