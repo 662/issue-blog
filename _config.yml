@@ -81,3 +81,7 @@ insight: true
 deploy:
   type: git
   repo: git@github.com:662/662.github.io.git
+
+search:
+  path: search.xml
+  field: post
