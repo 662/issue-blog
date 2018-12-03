@@ -1,6 +1,6 @@
 ---
 title: 关于Nginx中“no resolver defined to resolve xxx.xxx“的问题
-date: 2018-03-23 20:50:02
+date: 2017-04-23 20:50:02
 categories: work
 tags: nginx
 ---

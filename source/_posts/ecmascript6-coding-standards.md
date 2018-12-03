@@ -1,6 +1,6 @@
 ---
 title: ECMAScript6 编码规范
-date: 2018-03-09 17:18:02
+date: 2016-07-09 17:18:02
 categories: work
 tags:
 - es6
