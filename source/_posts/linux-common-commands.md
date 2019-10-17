@@ -1,6 +1,6 @@
 ---
 title: linux常用命令
-date: 2016-07-09 17:18:02
+date: 2019-10-16 22:13:32
 categories: work
 tags:
 - es6
@@ -8,10 +8,10 @@ tags:
 
 命令太多，有些又不常用，记录下一些，以便以后需要用到时不用去查文档
 
-## CentOS 服务相关
+## CentOS7 服务相关
 
 ```bash
-#CentOS7 查看服务列表
+# 查看服务列表
 systemctl list-units --type=service 
 
 # 列出所有已经安装的 服务及状态（可为人所读, 内容简略、清晰）
