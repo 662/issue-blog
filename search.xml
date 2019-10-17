@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>linux常用命令</title>
+      <link href="/2019/10/16/linux-common-commands/"/>
+      <url>/2019/10/16/linux-common-commands/</url>
+      <content type="html"><![CDATA[<p>命令太多，有些又不常用，记录下一些，以便以后需要用到时不用去查文档</p><h2 id="CentOS7-服务相关"><a href="#CentOS7-服务相关" class="headerlink" title="CentOS7 服务相关"></a>CentOS7 服务相关</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看服务列表</span></span><br><span class="line">systemctl list-units --<span class="built_in">type</span>=service </span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有已经安装的 服务及状态（可为人所读, 内容简略、清晰）</span></span><br><span class="line">systemctl list-unit-files</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出正在运行的服务状态(基本不为人所读，内容复杂、全面)</span></span><br><span class="line">systemctl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以树形列出正在运行的进程，它可以递归显示控制组内容</span></span><br><span class="line">systemd-cgls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start name.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">systemctl stop name.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart name.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看服务状态</span></span><br><span class="line">systemctl status name.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开机自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> name.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消开机自启</span></span><br><span class="line">systemctl <span class="built_in">disable</span> name.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看是否开机自启</span></span><br><span class="line">systemctl is-enabled postfix.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已启动的服务列表</span></span><br><span class="line">systemctl list-unit-files | grep enabled</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看启动失败的服务列表</span></span><br><span class="line">systemctl --failed</span><br></pre></td></tr></table></figure><p><strong>注意：使用命令 <code>systemctl is-enabled postfix.service</code> 得到的值可以是enable、disable或static，这里的 static 它是指对应的 Unit 文件中没有定义[Install]区域，因此无法配置为开机启动服务。</strong></p><p><strong>PS：启用服务就是在当前”runlevel”的配置文件目录<code>/etc/systemd/system/multi-user.target.wants</code>里建立<code>/usr/lib/systemd/system</code>里面对应服务配置文件的软链接，禁用服务就是删除此软链接，添加服务就是添加软连接。</strong></p>]]></content>
+      
+      <categories>
+          
+          <category> work </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> es6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>SS服务器搭建教程</title>
       <link href="/2019/04/20/vultr-ss-bbr-kcptun/"/>
       <url>/2019/04/20/vultr-ss-bbr-kcptun/</url>
