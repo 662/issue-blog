@@ -1,5 +1,5 @@
 ---
-title: SS服务器搭建教程
+title: 如何通过 Github gists 学习优秀的代码片段
 date: 2019-04-20 18:29:10
 categories: ladder
 tags: 
@@ -18,7 +18,7 @@ tags:
 [6]:https://github.com/google/bbr "bbr"
 [7]:https://github.com/skywind3000/kcp "kcp"
 
-本文旨在快速~~学习Linux~~搭建 [shadowsocks](https://github.com/shadowsocks/shadowsocks) 服务(以下简称ss)，并利用 [bbr][6] 和 [kcp][7] 进行加速，然后在 windows/ios 设备上愉悦地网上冲浪。
+由于 Github gists 在国内无法正常访问，所以本文旨在快速学习Linux~~搭建 [shadowsocks](https://github.com/shadowsocks/shadowsocks) 服务(以下简称ss)~~，并利用 [bbr][6] 和 [kcp][7] 进行加速，然后在 windows/ios 设备上访问 Github gists 来学习优秀的代码片段。
 
 **注意：本文基于你对 linux 操作系统有简单的认知和理解，所以本文并不适合纯小白**
 

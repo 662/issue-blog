@@ -1,9 +1,9 @@
 ---
-title: linux常用命令
+title: Linux 常用命令
 date: 2019-10-16 22:13:32
 categories: work
 tags:
-- es6
+- linux
 ---
 
 命令太多，有些又不常用，记录下一些，以便以后需要用到时不用去查文档
