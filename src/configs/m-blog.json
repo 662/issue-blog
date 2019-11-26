@@ -8,14 +8,14 @@
       "icon": "address-card",
       "title": "About",
       "path": "/about",
-      "issueNumber": 1,
+      "issueNumber": 19,
       "allowComments": false
     },
     {
       "icon": "comments",
       "title": "Guestbook",
       "path": "/guestbook",
-      "issueNumber": 1,
+      "issueNumber": 18,
       "allowComments": true
     }
   ],
