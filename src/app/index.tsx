@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from 'apollo-boost'
 import {
@@ -49,6 +50,11 @@ const client = new ApolloClient({
 const ApolloApp: React.FC = () => {
   return (
     <ApolloProvider client={client}>
+      <Helmet>
+        <title>{config.title}</title>
+        <meta name="Keywords" content={config.keywords} />
+        <meta name="Description" content={config.description} />
+      </Helmet>
       <App />
     </ApolloProvider>
   )

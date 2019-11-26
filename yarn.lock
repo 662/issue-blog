@@ -1372,6 +1372,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-helmet@^5.0.14":
+  version "5.0.14"
+  resolved "https://r.cnpmjs.org/@types/react-helmet/download/@types/react-helmet-5.0.14.tgz#a07979ccb2cee088e74e735c84058fc8607d32e4"
+  integrity sha1-oHl5zLLO4IjnTnNchAWPyGB9MuQ=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-router-dom@^5.1.1":
   version "5.1.2"
   resolved "https://r.cnpmjs.org/@types/react-router-dom/download/@types/react-router-dom-5.1.2.tgz#853f229f1f297513c0be84f7c914a08b778cfdf5"
@@ -8921,7 +8928,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://r.cnpmjs.org/prop-types/download/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
@@ -9148,6 +9155,21 @@ react-error-overlay@6.1.0-next.62+3d6d0a1f:
   resolved "https://r.cnpmjs.org/react-error-overlay/download/react-error-overlay-6.1.0-next.62.tgz#d4cacfaab93c35c881fe745eb2fe5bc7ae69dc0e"
   integrity sha1-1MrPqrk8NciB/nResv5bx65p3A4=
 
+react-fast-compare@^2.0.2:
+  version "2.0.4"
+  resolved "https://r.cnpmjs.org/react-fast-compare/download/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
+  integrity sha1-6EtNRVsP7BE+BALDKTUnFRlvgfk=
+
+react-helmet@^5.2.1:
+  version "5.2.1"
+  resolved "https://r.cnpmjs.org/react-helmet/download/react-helmet-5.2.1.tgz#16a7192fdd09951f8e0fe22ffccbf9bb3e591ffa"
+  integrity sha1-FqcZL90JlR+OD+Iv/Mv5uz5ZH/o=
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.5.4"
+    react-fast-compare "^2.0.2"
+    react-side-effect "^1.1.0"
+
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.12.0"
   resolved "https://r.cnpmjs.org/react-is/download/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
@@ -9241,6 +9263,13 @@ react-scripts@^3.3.0-next.62:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.1"
+
+react-side-effect@^1.1.0:
+  version "1.2.0"
+  resolved "https://r.cnpmjs.org/react-side-effect/download/react-side-effect-1.2.0.tgz#0e940c78faba0c73b9b0eba9cd3dda8dfb7e7dae"
+  integrity sha1-DpQMePq6DHO5sOupzT3ajft+fa4=
+  dependencies:
+    shallowequal "^1.0.1"
 
 react@^16.12.0:
   version "16.12.0"
@@ -9958,6 +9987,11 @@ shallow-clone@^3.0.0:
   integrity sha1-jymBrZJTH1UDWwH7IwdppA4C76M=
   dependencies:
     kind-of "^6.0.2"
+
+shallowequal@^1.0.1:
+  version "1.1.0"
+  resolved "https://r.cnpmjs.org/shallowequal/download/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
+  integrity sha1-GI1SHelbkIdAT9TctosT3wrk5/g=
 
 shebang-command@^1.2.0:
   version "1.2.0"
