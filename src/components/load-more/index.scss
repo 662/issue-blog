@@ -1,0 +1,12 @@
+.m-list-end {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+}
+.m-load-more {
+  cursor: pointer;
+  &:hover {
+    // background-color: #eee;
+    color: #000;
+  }
+}

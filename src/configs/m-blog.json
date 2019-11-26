@@ -1,0 +1,24 @@
+{
+  "title": "111",
+  "subtitle": "22222222",
+  "pages": [
+    {
+      "icon": "address-card",
+      "title": "About",
+      "path": "/about",
+      "issueNumber": 1,
+      "allowComments": false
+    },
+    {
+      "icon": "comments",
+      "title": "Guestbook",
+      "path": "/guestbook",
+      "issueNumber": 1,
+      "allowComments": true
+    }
+  ],
+  "github": {
+    "repository": { "owner": "662", "name": "blog" },
+    "token": "edce74710e7b033d7f0963285b46bd20580d763d"
+  }
+}

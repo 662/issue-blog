@@ -1,0 +1,32 @@
+.m-panel {
+  margin-bottom: 16px;
+
+  .m-panel-header {
+    padding: 8px;
+    display: flex;
+    border-bottom: solid 1px #ddd;
+    .m-panel-title {
+      svg {
+        margin-right: 4px;
+      }
+      font-size: 16px;
+    }
+  }
+
+  .m-panel-body {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+.m-panel-default {
+}
+
+.m-panel-large {
+  .m-panel-header {
+    border-bottom: none;
+    .m-panel-title {
+      font-size: 24px;
+    }
+  }
+}
