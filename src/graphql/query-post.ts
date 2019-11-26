@@ -16,6 +16,15 @@ const QUERY_POST = gql`
                 bodyHTML
                 createdAt
                 updatedAt
+                milestone {
+                  number
+                  title
+                }
+                labels(first: 10) {
+                  nodes {
+                    name
+                  }
+                }
             }
         }
     }
