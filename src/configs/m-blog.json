@@ -18,7 +18,7 @@
     }
   ],
   "github": {
-    "repository": { "owner": "662", "name": "blog" },
+    "repository": { "owner": "662", "name": "blog", "assignee": "662" },
     "token": "edce74710e7b033d7f0963285b46bd20580d763d"
   }
 }

@@ -38,7 +38,8 @@ const QUERY_CATEGORY_POSTS = gql`
         issues(
           first: 10
           after: $after
-          orderBy: { field: CREATED_AT, direction: DESC }
+          orderBy: { field: CREATED_AT, direction: DESC },
+          filterBy: { assignee: "${config.github.repository.assignee}" }
         ) {
           pageInfo {
             endCursor

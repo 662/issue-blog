@@ -38,7 +38,8 @@ const QUERY_POSTS = gql`
         first: 10
         after: $after
         labels: $labels
-        orderBy: { field: CREATED_AT, direction: DESC }
+        orderBy: { field: CREATED_AT, direction: DESC },
+        filterBy: { assignee: "${config.github.repository.assignee}" }
       ) {
         pageInfo {
           endCursor
