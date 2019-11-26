@@ -4,6 +4,7 @@ import App from './app'
 import * as serviceWorker from './serviceWorker'
 import 'github-markdown-css'
 import './assets/styles/normalize.css'
+import './assets/styles/reset-markdown.css'
 import './index.scss'
 
 ReactDOM.render(<App />, document.getElementById('root'))
