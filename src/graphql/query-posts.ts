@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost'
 import { IQueryPostsResult } from '../interfaces'
-import config from '../configs/m-blog.json'
+import config from '../configs/blog.json'
 
 export type QueryPostsVariables = {
   after: string | null

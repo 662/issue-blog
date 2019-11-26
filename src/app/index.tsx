@@ -16,7 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faFolder, faFile, faStar } from '@fortawesome/free-regular-svg-icons'
 import App from './App'
-import config from '../configs/m-blog.json'
+import config from '../configs/blog.json'
 import introspectionQueryResultData from '../configs/fragment-types.json'
 
 library.add(

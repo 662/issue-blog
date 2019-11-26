@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import Layout from '../components/layout'
 import Page from './page'
-import config from '../configs/m-blog.json'
+import config from '../configs/blog.json'
 
 interface Props {}
 

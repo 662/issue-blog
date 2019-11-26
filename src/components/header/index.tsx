@@ -3,7 +3,7 @@ import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import classnames from 'classnames'
-import config from '../../configs/m-blog.json'
+import config from '../../configs/blog.json'
 import './index.scss'
 
 const Header: React.FC<RouteComponentProps> = ({ location }) => {
