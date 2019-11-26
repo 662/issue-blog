@@ -51,7 +51,9 @@ const ApolloApp: React.FC = () => {
   return (
     <ApolloProvider client={client}>
       <Helmet>
-        <title>{config.title}</title>
+        <title>
+          {config.title} - {config.subtitle}
+        </title>
         <meta name="Keywords" content={config.keywords} />
         <meta name="Description" content={config.description} />
       </Helmet>
