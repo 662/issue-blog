@@ -1,24 +1,41 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect } from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
 import { RouteComponentProps } from 'react-router-dom'
+import Gitalk from 'gitalk'
 import QUERY_POST, {
   QueryPostResult as Result,
   QueryPostVariables as Variables,
 } from '../../graphql/query-post'
 import DataPanel from '../../components/data-panel'
 import './index.scss'
+import 'gitalk/dist/gitalk.css'
 
 type Params = { id: string }
 
 const Post: React.FC<RouteComponentProps<Params>> = memo(({ match }) => {
+  const number = ~~match.params.id
   const { loading, data, error, refetch } = useQuery<Result, Variables>(
     QUERY_POST,
-    {
-      variables: { number: ~~match.params.id },
-    }
+    { variables: { number } }
   )
+
+  useEffect(() => {
+    const gitalk = new Gitalk({
+      clientID: 'GitHub Application Client ID',
+      clientSecret: 'GitHub Application Client Secret',
+      repo: 'GitHub repo',
+      owner: 'GitHub repo owner',
+      admin: [
+        'GitHub repo owner and collaborators, only these guys can initialize github issues',
+      ],
+      number,
+      distractionFreeMode: false, // Facebook-like distraction free mode
+    })
+
+    gitalk.render('m-comments-list')
+  }, [number])
 
   const post = data?.repository.issue
 
@@ -55,6 +72,7 @@ const Post: React.FC<RouteComponentProps<Params>> = memo(({ match }) => {
             dangerouslySetInnerHTML={{
               __html: post.bodyHTML,
             }}></div>
+          <div id="m-comments-list"></div>
         </>
       )}
     </DataPanel>
