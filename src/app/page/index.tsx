@@ -38,18 +38,16 @@ const Page: React.FC<PageProps> = ({ issueNumber, title, allowComments }) => {
   )
 
   return (
-    <>
-      <DataPanel error={error} loading={loading} onRefresh={refetch}>
-        <h2 className="m-page-title">{title}</h2>
-        <div
-          className="markdown-body"
-          dangerouslySetInnerHTML={{ __html: issueHTML }}></div>
-      </DataPanel>
+    <DataPanel error={error} loading={loading} onRefresh={refetch}>
+      <h2 className="m-page-title">{title}</h2>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={{ __html: issueHTML }}></div>
 
       {allowComments && (
         <div ref={commentRef} className="m-page-comments"></div>
       )}
-    </>
+    </DataPanel>
   )
 }
 
