@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo, useEffect, useCallback } from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
@@ -16,26 +16,29 @@ type Params = { id: string }
 
 const Post: React.FC<RouteComponentProps<Params>> = memo(({ match }) => {
   const number = ~~match.params.id
+
   const { loading, data, error, refetch } = useQuery<Result, Variables>(
     QUERY_POST,
     { variables: { number } }
   )
 
-  useEffect(() => {
-    const gitalk = new Gitalk({
-      clientID: 'GitHub Application Client ID',
-      clientSecret: 'GitHub Application Client Secret',
-      repo: 'GitHub repo',
-      owner: 'GitHub repo owner',
-      admin: [
-        'GitHub repo owner and collaborators, only these guys can initialize github issues',
-      ],
-      number,
-      distractionFreeMode: false, // Facebook-like distraction free mode
-    })
-
-    gitalk.render('m-comments-list')
-  }, [number])
+  const commentRef = useCallback(
+    node => {
+      if (node !== null) {
+        const gitalk = new Gitalk({
+          clientID: 'a9ea8ec21008341ab6f8',
+          clientSecret: '6656888d4258b947370b8b27b7650baa4e97fca2',
+          repo: 'blog',
+          owner: '662',
+          admin: ['662'],
+          number,
+          distractionFreeMode: false,
+        })
+        gitalk.render(node)
+      }
+    },
+    [number]
+  )
 
   const post = data?.repository.issue
 
@@ -60,6 +63,7 @@ const Post: React.FC<RouteComponentProps<Params>> = memo(({ match }) => {
               <span className="m-post-profile-title">Tags:</span>
               {post.labels.nodes.map(label => (
                 <Link
+                  key={label.name}
                   className="m-post-profile-item"
                   to={`/tags/${label.name}`}>
                   {label.name}
@@ -72,7 +76,7 @@ const Post: React.FC<RouteComponentProps<Params>> = memo(({ match }) => {
             dangerouslySetInnerHTML={{
               __html: post.bodyHTML,
             }}></div>
-          <div id="m-comments-list"></div>
+          <div ref={commentRef}></div>
         </>
       )}
     </DataPanel>
