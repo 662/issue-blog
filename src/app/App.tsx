@@ -39,7 +39,10 @@ const App: React.FC<Props> = () => {
           />
           {config.pages.map(page => (
             <Route exact key={page.path} path={page.path}>
-              <Page title={page.title} issueNumber={page.issueNumber}></Page>
+              <Page
+                title={page.title}
+                issueNumber={page.issueNumber}
+                allowComments={page.allowComments}></Page>
             </Route>
           ))}
           <Redirect to="/" />

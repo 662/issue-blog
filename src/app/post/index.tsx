@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useCallback } from 'react'
+import React, { memo, useCallback } from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
@@ -9,8 +9,8 @@ import QUERY_POST, {
   QueryPostVariables as Variables,
 } from '../../graphql/query-post'
 import DataPanel from '../../components/data-panel'
-import './index.scss'
 import 'gitalk/dist/gitalk.css'
+import './index.scss'
 
 type Params = { id: string }
 
@@ -76,7 +76,7 @@ const Post: React.FC<RouteComponentProps<Params>> = memo(({ match }) => {
             dangerouslySetInnerHTML={{
               __html: post.bodyHTML,
             }}></div>
-          <div ref={commentRef}></div>
+          <div ref={commentRef} className="m-post-comments"></div>
         </>
       )}
     </DataPanel>
