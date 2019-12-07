@@ -10,14 +10,14 @@ import QUERY_SIDER from '../../graphql/query-sider'
 import './index.scss'
 
 const Sider: React.FC = () => {
-  const { loading, error, data } = useQuery(QUERY_SIDER)
+  const { loading, error, data, refetch } = useQuery(QUERY_SIDER)
   const categories: IMilestone[] = data ? data.repository.milestones.nodes : []
   const tags: ILabel[] = data ? data.repository.labels.nodes : []
   const recentPosts: IIssue[] = data ? data.repository.issues.nodes : []
 
   return (
     <div className="m-sider">
-      <RequestStatus loading={loading} error={error}>
+      <RequestStatus loading={loading} error={error} onRefresh={refetch}>
         <ListPanel
           title={
             <>
