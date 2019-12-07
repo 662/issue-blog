@@ -16,7 +16,7 @@ const App: React.FC<Props> = () => {
     <Router>
       <Layout>
         <Switch>
-          <Route exact path="/" component={require('./home').default} />
+          <Route exact path="/" component={require('./posts').default} />
           <Route
             exact
             path="/archives"
@@ -24,13 +24,13 @@ const App: React.FC<Props> = () => {
           />
           <Route
             exact
-            path="/tags/:name"
-            component={require('./tags').default}
+            path="/tags/:title"
+            component={require('./posts').default}
           />
           <Route
             exact
-            path="/categories/:number"
-            component={require('./categories').default}
+            path="/categories/:title"
+            component={require('./posts').default}
           />
           <Route
             exact

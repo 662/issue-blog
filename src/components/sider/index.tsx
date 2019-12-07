@@ -26,9 +26,9 @@ const Sider: React.FC = () => {
             </>
           }
           data={categories}
-          itemKey={item => item.number}
+          itemKey={item => item.title}
           renderItem={item => (
-            <Link to={`/categories/${item.number}`} title={item.title}>
+            <Link to={`/categories/${item.title}`} title={item.title}>
               {item.title}
             </Link>
           )}

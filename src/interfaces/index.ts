@@ -51,6 +51,10 @@ export interface IQueryCategoryPostsResult {
   }
 }
 
+export interface ISearchResult {
+  search: IIssues
+}
+
 export interface IQuerySiderResult {
   repository: {
     milestones: { nodes: IMilestone[] }
