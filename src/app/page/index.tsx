@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import Gitalk from 'gitalk'
 import { useQuery } from '@apollo/react-hooks'
-import QUERY_POST from '../../graphql/query-post'
+import QUERY_POST from 'src/graphql/query-post'
 import DataPanel from '../../components/data-panel'
 import 'gitalk/dist/gitalk.css'
 import './index.scss'
