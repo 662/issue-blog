@@ -9,7 +9,7 @@ const Footer: React.FC = () => (
       target="_blank"
       rel="noopener noreferrer"
       style={{ marginLeft: 16 }}>
-      渝ICP备17011776号-1
+      渝ICP备17011776号
     </a>
   </section>
 )
