@@ -3,6 +3,7 @@ import Gitalk from 'gitalk'
 import { useQuery } from '@apollo/react-hooks'
 import QUERY_POST from 'src/graphql/query-post'
 import DataPanel from '../../components/data-panel'
+import config from '../../configs/blog.json'
 import 'gitalk/dist/gitalk.css'
 import './index.scss'
 
@@ -22,15 +23,7 @@ const Page: React.FC<PageProps> = ({ issueNumber, title, allowComments }) => {
   const commentRef = useCallback(
     node => {
       if (node !== null) {
-        const gitalk = new Gitalk({
-          clientID: 'a9ea8ec21008341ab6f8',
-          clientSecret: '6656888d4258b947370b8b27b7650baa4e97fca2',
-          repo: 'blog',
-          owner: '662',
-          admin: ['662'],
-          number: issueNumber,
-          distractionFreeMode: false,
-        })
+        const gitalk = new Gitalk({ ...config.gitalk, number: issueNumber })
         gitalk.render(node)
       }
     },
