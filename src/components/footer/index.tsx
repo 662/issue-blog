@@ -5,7 +5,7 @@ const Footer: React.FC = () => (
   <section className="m-container m-footer">
     Copyright © 2019 Lost Scarecrow.
     <a
-      href="http://www.beian.miit.gov.cn/publish/query/indexFirst.action"
+      href="http://www.beian.miit.gov.cn/"
       target="_blank"
       rel="noopener noreferrer"
       style={{ marginLeft: 16 }}>
