@@ -11,9 +11,10 @@ const DataPanel: React.FC<DataPanelProps> = ({
   loading,
   error,
   onRefresh,
+  icon,
 }) => {
   return (
-    <Panel title={title} ext={ext}>
+    <Panel title={title} ext={ext} icon={icon}>
       <RequestStatus loading={loading} error={error} onRefresh={onRefresh}>
         {children}
       </RequestStatus>

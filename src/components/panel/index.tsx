@@ -1,12 +1,10 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import './index.scss'
 
 export interface PanelProps {
   title?: React.ReactNode
   ext?: React.ReactNode
-  icon?: IconProp
+  icon?: string
 }
 
 const Panel: React.FC<PanelProps> = ({ title, ext, children, icon }) => (
@@ -14,7 +12,7 @@ const Panel: React.FC<PanelProps> = ({ title, ext, children, icon }) => (
     {(title || ext) && (
       <div className="m-panel-header">
         <div className="m-panel-title">
-          {icon && <FontAwesomeIcon icon={icon} />}
+          {icon && <i className={icon} />}
           {title}
         </div>
         {ext && <div>{ext}</div>}

@@ -6,29 +6,9 @@ import {
   IntrospectionFragmentMatcher,
   InMemoryCache,
 } from 'apollo-cache-inmemory'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {
-  faHome,
-  faArchive,
-  faComments,
-  faExternalLinkAlt,
-  faAddressCard,
-} from '@fortawesome/free-solid-svg-icons'
-import { faFolder, faFile, faStar } from '@fortawesome/free-regular-svg-icons'
 import App from './App'
 import config from '../configs/blog.json'
 import introspectionQueryResultData from '../configs/fragment-types.json'
-
-library.add(
-  faHome,
-  faArchive,
-  faComments,
-  faFolder,
-  faFile,
-  faStar,
-  faExternalLinkAlt,
-  faAddressCard
-)
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData,

@@ -10,6 +10,7 @@ export interface ListPanelProps<T> extends DataPanelProps {
 }
 
 function ListPanel<T>({
+  icon,
   title,
   ext,
   data,
@@ -20,7 +21,12 @@ function ListPanel<T>({
   direction = 'column',
 }: ListPanelProps<T>) {
   return (
-    <DataPanel title={title} ext={ext} error={error} loading={loading}>
+    <DataPanel
+      title={title}
+      ext={ext}
+      error={error}
+      loading={loading}
+      icon={icon}>
       <ul className={`m-panel-list m-panel-list-${direction}`}>
         {data.map((item, i) => (
           <li key={itemKey(item)}>{renderItem(item, i)}</li>

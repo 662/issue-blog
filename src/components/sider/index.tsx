@@ -1,6 +1,5 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 import ListPanel from '../list-panel'
 import RequestStatus from '../request-status'
@@ -19,12 +18,8 @@ const Sider: React.FC = () => {
     <div className="m-sider">
       <RequestStatus loading={loading} error={error} onRefresh={refetch}>
         <ListPanel
-          title={
-            <>
-              <FontAwesomeIcon icon={['far', 'folder']} />
-              Categories
-            </>
-          }
+          icon="far fa-folder"
+          title="Categories"
           data={categories}
           itemKey={item => item.title}
           renderItem={item => (
@@ -34,12 +29,8 @@ const Sider: React.FC = () => {
           )}
         />
         <ListPanel
-          title={
-            <>
-              <FontAwesomeIcon icon={['far', 'star']} />
-              Tags
-            </>
-          }
+          icon="far fa-star"
+          title="Tags"
           direction="row"
           data={tags}
           itemKey={item => item.name}
@@ -50,12 +41,8 @@ const Sider: React.FC = () => {
           )}
         />
         <ListPanel
-          title={
-            <>
-              <FontAwesomeIcon icon={['far', 'file']} />
-              Recent
-            </>
-          }
+          icon="far fa-file"
+          title="Recent"
           data={recentPosts}
           itemKey={item => item.number}
           renderItem={item => (
