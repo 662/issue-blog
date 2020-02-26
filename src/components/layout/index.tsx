@@ -3,16 +3,16 @@ import React from 'react'
 import Header from '../header'
 import Footer from '../footer'
 import Sider from '../sider'
-import './index.scss'
+import Section from '../section'
 
 const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header></Header>
-      <section className="m-container m-body">
-        <main>{children}</main>
+      <Section style={{ display: 'flex' }}>
+        <main style={{ flexGrow: 1, maxWidth: 736 }}>{children}</main>
         <Sider />
-      </section>
+      </Section>
       <Footer></Footer>
     </>
   )

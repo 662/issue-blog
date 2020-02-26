@@ -27,7 +27,7 @@ const Posts: React.FC<PostsProps> = memo(({ match }) => {
         onRefresh={refetch}
         loading={loading}
         error={error}
-        hasNextPage={hasNextPage}
+        hasNextPage={true}
         loadMore={loadMore}></LoadMore>
     </Panel>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 import DataPanel, { DataPanelProps } from '../data-panel'
-import './index.scss'
+import * as styled from './styled'
 
 export interface ListPanelProps<T> extends DataPanelProps {
   direction?: 'row' | 'column'
@@ -27,11 +27,11 @@ function ListPanel<T>({
       error={error}
       loading={loading}
       icon={icon}>
-      <ul className={`m-panel-list m-panel-list-${direction}`}>
+      <styled.ListPanel direction={direction}>
         {data.map((item, i) => (
           <li key={itemKey(item)}>{renderItem(item, i)}</li>
         ))}
-      </ul>
+      </styled.ListPanel>
     </DataPanel>
   )
 }

@@ -1,17 +1,17 @@
 import React from 'react'
-import Navbar from './navbar'
-import config from '../../configs/blog.json'
-import './index.scss'
+import Section from 'src/components/section'
+import Navbar from 'src/components/navbar'
+import config from 'src/configs/blog.json'
 
 const Header: React.FC = () => {
   return (
-    <section className="m-header m-container">
+    <Section divider>
       <div>
         <h1>{config.title}</h1>
         <p>{config.subtitle}</p>
       </div>
       <Navbar></Navbar>
-    </section>
+    </Section>
   )
 }
 

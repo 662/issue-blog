@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import App from './app'
 import * as serviceWorker from './serviceWorker'
 import 'github-markdown-css'
-import './assets/styles/normalize.css'
-import './assets/styles/reset-markdown.css'
-import './index.scss'
+// import './assets/styles/normalize.css'
+// import './assets/styles/reset-markdown.css'
+// import './index.css'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 

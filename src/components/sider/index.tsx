@@ -6,7 +6,7 @@ import RequestStatus from '../request-status'
 
 import { IMilestone, ILabel, IIssue } from '../../interfaces'
 import QUERY_SIDER from '../../graphql/query-sider'
-import './index.scss'
+import * as styled from './styled'
 
 const Sider: React.FC = () => {
   const { loading, error, data, refetch } = useQuery(QUERY_SIDER)
@@ -15,7 +15,7 @@ const Sider: React.FC = () => {
   const recentPosts: IIssue[] = data ? data.repository.issues.nodes : []
 
   return (
-    <div className="m-sider">
+    <styled.Sider>
       <RequestStatus loading={loading} error={error} onRefresh={refetch}>
         <ListPanel
           icon="far fa-folder"
@@ -52,7 +52,7 @@ const Sider: React.FC = () => {
           )}
         />
       </RequestStatus>
-    </div>
+    </styled.Sider>
   )
 }
 

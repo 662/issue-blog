@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.scss'
+import * as styled from './styled'
 
 export interface PanelProps {
   title?: React.ReactNode
@@ -8,18 +8,18 @@ export interface PanelProps {
 }
 
 const Panel: React.FC<PanelProps> = ({ title, ext, children, icon }) => (
-  <div className="m-panel">
+  <styled.Panel>
     {(title || ext) && (
-      <div className="m-panel-header">
-        <div className="m-panel-title">
+      <styled.PanelHeader>
+        <div>
           {icon && <i className={icon} />}
           {title}
         </div>
         {ext && <div>{ext}</div>}
-      </div>
+      </styled.PanelHeader>
     )}
-    <div className="m-panel-body">{children}</div>
-  </div>
+    <styled.PanelBody>{children}</styled.PanelBody>
+  </styled.Panel>
 )
 
 export default Panel

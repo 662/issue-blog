@@ -11,7 +11,7 @@ import QUERY_POST, {
 import DataPanel from '../../components/data-panel'
 import config from '../../configs/blog.json'
 import 'gitalk/dist/gitalk.css'
-import './index.scss'
+import * as styled from './styled'
 
 type Params = { id: string }
 
@@ -39,37 +39,37 @@ const Post: React.FC<RouteComponentProps<Params>> = memo(({ match }) => {
     <DataPanel error={error} loading={loading} onRefresh={refetch}>
       {post && (
         <>
-          <div className="m-post-header">
-            <h2 className="m-post-title">{post.title}</h2>
-            <div className="m-post-profile">
-              <span className="m-post-profile-item">
+          <styled.Header>
+            <styled.Title>{post.title}</styled.Title>
+            <styled.Profile>
+              <styled.ProfileItem>
                 {moment(post.createdAt).format('YYYY-MM-DD')}
-              </span>
-              <span className="m-post-profile-title">Category:</span>
-              <Link
-                className="m-post-profile-item"
+              </styled.ProfileItem>
+              <styled.ProfileLabel>Category:</styled.ProfileLabel>
+              <styled.ProfileItem
+                as={Link}
                 to={`/categories/${post.milestone.number}`}>
                 {post.milestone.title}
-              </Link>
-            </div>
-            <div className="m-post-profile">
-              <span className="m-post-profile-title">Tags:</span>
+              </styled.ProfileItem>
+            </styled.Profile>
+            <styled.Profile>
+              <styled.ProfileLabel>Tags:</styled.ProfileLabel>
               {post.labels.nodes.map(label => (
-                <Link
+                <styled.ProfileItem
+                  as={Link}
                   key={label.name}
-                  className="m-post-profile-item"
                   to={`/tags/${label.name}`}>
                   {label.name}
-                </Link>
+                </styled.ProfileItem>
               ))}
-            </div>
-          </div>
+            </styled.Profile>
+          </styled.Header>
           <div
             className="markdown-body"
             dangerouslySetInnerHTML={{
               __html: post.bodyHTML,
             }}></div>
-          <div ref={commentRef} className="m-post-comments"></div>
+          <div ref={commentRef} style={{ marginTop: 64 }}></div>
         </>
       )}
     </DataPanel>

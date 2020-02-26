@@ -5,7 +5,6 @@ import QUERY_POST from 'src/graphql/query-post'
 import DataPanel from '../../components/data-panel'
 import config from '../../configs/blog.json'
 import 'gitalk/dist/gitalk.css'
-import './index.scss'
 
 interface PageProps {
   issueNumber: number
@@ -32,14 +31,12 @@ const Page: React.FC<PageProps> = ({ issueNumber, title, allowComments }) => {
 
   return (
     <DataPanel error={error} loading={loading} onRefresh={refetch}>
-      <h2 className="m-page-title">{title}</h2>
+      <h2 style={{ margin: '0 0 32px 0' }}>{title}</h2>
       <div
         className="markdown-body"
         dangerouslySetInnerHTML={{ __html: issueHTML }}></div>
 
-      {allowComments && (
-        <div ref={commentRef} className="m-page-comments"></div>
-      )}
+      {allowComments && <div ref={commentRef} style={{ marginTop: 64 }}></div>}
     </DataPanel>
   )
 }

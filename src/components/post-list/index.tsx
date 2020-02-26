@@ -2,7 +2,8 @@ import React from 'react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { IIssue } from '../../interfaces'
-import './index.scss'
+import Container from '../container'
+import * as styled from './styled'
 
 interface PostListProps {
   issues: IIssue[]
@@ -17,19 +18,16 @@ interface PostItemProps {
 const PostItem: React.FC<PostItemProps> = ({ issue, showYear }) => {
   const createDate = moment(issue.createdAt)
   return (
-    <div className="m-post-item">
-      <div className="m-post-item-header">
-        {/* {issue.createdAt} */}
-        <div className="m-post-item-day">{createDate.format('MM-DD')}</div>
-        {showYear && (
-          <div className="m-post-item-year">{createDate.format('YYYY')}</div>
-        )}
-      </div>
-      <div className="m-post-item-body">
-        <div className="m-post-item-title">
+    <Container size="small" style={{ display: 'flex' }}>
+      <styled.Left>
+        <styled.Day>{createDate.format('MM-DD')}</styled.Day>
+        {showYear && <styled.Year>{createDate.format('YYYY')}</styled.Year>}
+      </styled.Left>
+      <div>
+        <styled.Title>
           <Link to={`/posts/${issue.number}`}>{issue.title}</Link>
-        </div>
-        <div className="m-post-item-profile">
+        </styled.Title>
+        <styled.Profile>
           {issue.milestone && (
             <>
               <span>Category: </span>
@@ -50,9 +48,9 @@ const PostItem: React.FC<PostItemProps> = ({ issue, showYear }) => {
               ))}
             </>
           )}
-        </div>
+        </styled.Profile>
       </div>
-    </div>
+    </Container>
   )
 }
 

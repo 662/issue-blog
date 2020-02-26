@@ -1,6 +1,7 @@
 import React from 'react'
 import RequestStatus, { RequestStatusProps } from '../request-status'
-import './index.scss'
+import Container from '../container'
+import Button from '../button'
 
 interface Props extends RequestStatusProps {
   loadMore: () => void
@@ -14,16 +15,16 @@ const LoadMore: React.FC<Props> = ({
   loadMore,
   onRefresh,
 }) => (
-  <div className="m-list-end">
-    <RequestStatus loading={loading} error={error} onRefresh={onRefresh}>
-      {hasNextPage && (
-        <div className="m-load-more" onClick={loadMore}>
+  <RequestStatus loading={loading} error={error} onRefresh={onRefresh}>
+    {hasNextPage && (
+      <Container size="small" style={{ textAlign: 'center' }}>
+        <Button as="div" bordered={false} onClick={loadMore}>
           <div>加载更多</div>
           <div>﹀</div>
-        </div>
-      )}
-    </RequestStatus>
-  </div>
+        </Button>
+      </Container>
+    )}
+  </RequestStatus>
 )
 
 export default LoadMore
