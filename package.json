@@ -31,6 +31,7 @@
     "@types/react-hot-loader": "^4.1.1",
     "@types/styled-components": "^5.0.1",
     "@types/webpack-env": "^1.15.1",
+    "husky": "^4.2.3",
     "react-hot-loader": "^4.12.19",
     "serve": "^11.3.0",
     "typescript": "^3.8.3"
