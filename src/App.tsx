@@ -1,32 +1,41 @@
 import React from 'react'
-import { Root, Routes, addPrefetchExcludes } from 'react-static'
-import { Link, Router } from '@reach/router'
-import FancyDiv from 'components/FancyDiv'
-import Dynamic from 'containers/Dynamic'
-import './app.css'
+import { Root, Routes, useSiteData, Head } from 'react-static'
+import { Router } from '@reach/router'
+import Layout from 'components/layout'
+import { ILayout } from 'types'
 
-// Any routes that start with 'dynamic' will be treated as non-static routes
-addPrefetchExcludes(['dynamic'])
+function Main() {
+  const { site, pages, sider } = useSiteData<ILayout>()
+  return (
+    <>
+      <Head>
+        <meta charSet="UTF-8" />
+        <title>{site.title}</title>
+        <meta name="description" content={site.description} />
+        <meta name="keywords" content={site.keywords} />
+      </Head>
+      <Layout
+        title={site.title}
+        subtitle={site.subtitle}
+        pages={pages}
+        pathname=""
+        categories={sider.categories}
+        tags={sider.tags}
+        posts={sider.posts}>
+        <Router>
+          <Routes path="*" />
+        </Router>
+      </Layout>
+    </>
+  )
+}
 
 function App() {
   return (
     <Root>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
-      </nav>
-      <div className="content">
-        <FancyDiv>
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </FancyDiv>
-      </div>
+      <React.Suspense fallback={<em>Loading...</em>}>
+        <Main></Main>
+      </React.Suspense>
     </Root>
   )
 }

@@ -1,29 +1,44 @@
-import axios from 'axios'
 import path from 'path'
-// import { Post } from './types'
-
-// Typescript support in static.config.js is not yet supported, but is coming in a future update!
+import fetchSider from './service/fetch-sider'
+import fetchPosts from './service/fetch-posts'
+import fetchPost from './service/fetch-post'
+import config from './config/blog.json'
 
 export default {
   entry: path.join(__dirname, 'src', 'index.tsx'),
+  siteRoot: config.site.url,
+  getSiteData: async ({ dev }) => {
+    const sider = await fetchPosts()
+
+    return {
+      site: config.site,
+      sider,
+      pages: config.pages,
+      lastBuilt: Date.now(),
+    }
+  },
   getRoutes: async () => {
-    const { data: posts } /* :{ data: Post[] } */ = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    )
-    return [
-      {
-        path: '/blog',
-        getData: () => ({
-          posts,
-        }),
-        children: posts.map((post /* : Post */) => ({
-          path: `/post/${post.id}`,
-          template: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
+    const posts = await fetchPosts()
+    const pageRoutes = config.pages.map(page => ({
+      path: page.path,
+      template: 'src/containers/page',
+      getData: async () => {
+        const post = await fetchPost(page.issueNumber)
+        return {
+          ...page,
+          post,
+        }
       },
+    }))
+    const postRoutes = posts.map(post => ({
+      path: `/post/${post.id}`,
+      template: 'src/containers/post',
+      getData: () => post,
+    }))
+    return [
+      { path: '/', getData: () => ({ posts }) },
+      ...postRoutes,
+      ...pageRoutes,
     ]
   },
   plugins: [

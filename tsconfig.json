@@ -13,13 +13,13 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "components/*": ["src/components/*"],
-      "containers/*": ["src/containers/*"],
-      "types/*": ["types/*"]
+      "types": ["src/types"],
+      "components/*": ["src/components/*"]
     },
     "lib": ["dom", "es2015", "es2016"]
   },
