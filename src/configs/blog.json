@@ -20,13 +20,13 @@
     }
   ],
   "github": {
-    "repository": { "owner": "662", "name": "blog", "assignee": "662" },
+    "repository": { "owner": "662", "name": "issue-blog", "assignee": "662" },
     "token": "edce74710e7b033d7f0963285b46bd20580d763d"
   },
   "gitalk": {
     "clientID": "a9ea8ec21008341ab6f8",
     "clientSecret": "6656888d4258b947370b8b27b7650baa4e97fca2",
-    "repo": "blog",
+    "repo": "issue-blog",
     "owner": "662",
     "admin": ["662"],
     "distractionFreeMode": false
